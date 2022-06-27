@@ -19,7 +19,6 @@ def doit(dest, teni, nopa):
     
 	probe_pkt = Ether(dst='ff:ff:ff:ff:ff:ff', src=get_if_hwaddr('eth0')) / Probe(tenant=teni) / IP(dst=addr) / randchar
     
-    for i in range(nopa):
     	try:
 		with open(str(probe_pkt[IP].src)+".s.txt", "a") as myfile:
     			for i in range(nopa):
